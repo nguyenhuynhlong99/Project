@@ -36,7 +36,7 @@
 }
 
 .header__navbar-user-name {
-    margin-left: 8px;
+    margin-left: 4px;
     font-size: 1.4rem;
     font-weight: 300;
 }
@@ -56,7 +56,7 @@
     background-color: var(--white-color);
     list-style: none;
     box-shadow: 0 1px 2px #e0e0e0;
-    /* display: none; */
+    display: none;
 }
 
 .header__navbar-user-menu::before {
@@ -81,6 +81,10 @@
 
 .header__navbar-user-item {
 
+}
+
+.header__navbar-user-item--separate {
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .header__navbar-user-item a {
@@ -116,7 +120,7 @@
 .header__navbar-item,
 .header__navbar-item-link{
     display: inline-block;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     color:var(--white-color);
     text-decoration: none; /* bỏ dấu gạch chân*/
     font-weight: 300;
@@ -155,6 +159,10 @@
 .header__navbar-icon-link{
     color:var(--white-color);
     text-decoration: none; /*xoa gach chan icon cua font awesome*/
+}
+
+.header__navbar-icon-link:nth-child(2) {
+    margin-left: 3px;
 }
 
 .header__navbar-icon{
@@ -217,13 +225,15 @@
 /*Header notification*/
 .header__notify {
     position: absolute;
+    z-index: 1;
     top: 118%;
     right: 0;
     width: 404px;
-    border: 1px solid #d3d3d3;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
     background-color: var(--white-color);
     cursor: default;
-    transform-origin: calc(100% - 20px) top ; /* tâm của transform*/
+    transform-origin: calc(100% - 32px) top ; /* tâm của transform*/
     animation: headerNotifyGrowth ease-in 0.2s; /* sử dụng caniuse.com để check trình duyệt có hỗ trợ css này ko */
     will-change: opacity, transform; /* viết để trình duyệt tối ưu chuyển động opacity và transform của animation*/
     display: none;
@@ -488,6 +498,12 @@
     width: 200px;
 }
 
+.header__logo-link {
+    color: transparent;
+    text-decoration: none;
+     /*tránh trường hợp tạo ra border và gạch dưới thường sẽ bị khi sử dụng trình duyệt cũ như IE*/
+}
+
 .header__logo-img {
     width: 150px;
     color: var(--white-color);
@@ -738,7 +754,7 @@
 .header__search-option {
     position: absolute;
     right: 0;
-    top: 120%;
+    top: 118%;
     width: 130px;
     list-style: none;
     box-shadow: 0 1px 2px #e0e0e0 ; /*tìm hiểu thêm về box-shadow  */
